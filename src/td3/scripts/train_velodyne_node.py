@@ -130,7 +130,7 @@ class td3(object):
         self.critic_optimizer = torch.optim.Adam(self.critic.parameters())
 
         self.max_action = max_action
-        self.writer = SummaryWriter(log_dir="./DRL_robot_navigation_ros2/src/td3/scripts/runs")
+        self.writer = SummaryWriter(log_dir="./src/td3/scripts/runs")
         # os.path.dirname(os.path.realpath(__file__)) + "/runs"
         self.iter_count = 0
 
@@ -781,8 +781,8 @@ if __name__ == '__main__':
                             evaluate(network=network, epoch=epoch, eval_episodes=eval_ep)
                         )
 
-                        network.save(file_name, directory="./DRL_robot_navigation_ros2/src/td3/scripts/pytorch_models")
-                        np.save("./DRL_robot_navigation_ros2/src/td3/scripts/results/%s" % (file_name), evaluations)
+                        network.save(file_name, directory="./src/td3/scripts/pytorch_models")
+                        np.save("./src/td3/scripts/results/%s" % (file_name), evaluations)
                         epoch += 1
 
                     state = env.reset()
