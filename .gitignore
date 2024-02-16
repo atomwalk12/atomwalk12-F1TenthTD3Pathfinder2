@@ -1,5 +1,12 @@
-src/f1tenth_gym_ros
-build
-install
-log
-DRL_robot_navigation_ros2
+
+# Ignore build and install directories
+build/
+install/
+DRL_robot_navigation_ros2/
+
+# Ignore log files
+log/
+
+# Ignore specific package directories
+src/f1tenth_gym_ros/
+src/f1tenth_gym_agent/
